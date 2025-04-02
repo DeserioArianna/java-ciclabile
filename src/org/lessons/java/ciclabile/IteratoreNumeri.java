@@ -8,6 +8,7 @@ public class IteratoreNumeri {
         this.arrayNumeri = numeri;
     }
 
+
     public int getElementoSuccessivo() {
         if (hasAncoraElementi()) {
             return arrayNumeri[indiceCorrente++];
@@ -20,4 +21,19 @@ public class IteratoreNumeri {
         return indiceCorrente < arrayNumeri.length;
     }
 
+    // Bonus
+    public IteratoreNumeri() {
+        this.arrayNumeri = new int[0];
+    }
+
+    public void addElemento(int numeroDaAggiungere) {
+        int[] nuovoArray = new int[this.arrayNumeri.length +1];
+
+        for (int i = 0; i < arrayNumeri.length; i++) {
+            nuovoArray[i] = arrayNumeri[i];
+        }
+
+        nuovoArray[arrayNumeri.length] = numeroDaAggiungere;
+        arrayNumeri = nuovoArray;
+    }
 }
